@@ -1,0 +1,514 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './styles/navbar.css';
+
+@layer base {
+  :root {
+    /* CYRUS Brand Colors - Semantic Tokens */
+    --cyrus-primary: 274 87% 54%;        /* #8E24AA */
+    --cyrus-primary-light: 274 100% 66%; /* #A64EFF */
+    --cyrus-primary-dark: 276 73% 30%;   /* #4A148C */
+    --cyrus-accent: 274 100% 74%;        /* #B388FF */
+    --cyrus-blue: 232 100% 56%;          /* #304FFE */
+    
+    /* Background System - Dark Mode (Default) */
+    --background: 220 13% 9%;               /* #18181B */
+    --background-secondary: 0 0% 3.9%;   /* Very dark */
+    --background-tertiary: 0 0% 6.3%;    /* Darker */
+    --background-glass: 0 0% 0% / 0.6;   /* Glass effect */
+    
+    /* Enhanced Glass Effect Variables */
+    --glass-bg-subtle: 0 0% 0% / 0.25;
+    --glass-bg-medium: 0 0% 0% / 0.35;
+    --glass-bg-strong: 0 0% 0% / 0.45;
+    --glass-border-subtle: 0 0% 100% / 0.05;
+    --glass-border-medium: 0 0% 100% / 0.08;
+    --glass-border-brand: 274 87% 54% / 0.15;
+    --glass-border-brand-strong: 274 87% 54% / 0.25;
+    
+    /* Text Colors - Dark Mode */
+    --foreground: 0 0% 98%;              /* White text */
+    --foreground-muted: 0 0% 70%;        /* Gray text */
+    --foreground-subtle: 0 0% 45%;       /* Subtle gray */
+    
+    /* Interactive Elements - Dark Mode */
+    --border: 0 0% 20%;                  /* Neutral border for dark */
+    --border-muted: 0 0% 15%;            /* Muted border */
+    --input: 0 0% 9.4%;                  /* Input background */
+    --ring: 274 87% 54%;                 /* Focus ring */
+    
+    /* Component Tokens - Dark Mode */
+    --card: 0 0% 6%;                     /* Darker card background */
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 274 87% 54%;              /* CYRUS Primary */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 9.4%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 9.4%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 9.4%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* CYRUS Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--cyrus-primary)), hsl(var(--cyrus-primary-light)));
+    --gradient-brand: linear-gradient(135deg, hsl(var(--cyrus-primary)), hsl(var(--cyrus-blue)));
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(var(--cyrus-primary) / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(var(--cyrus-primary) / 0.2);
+    
+    /* Spacing System */
+    --radius: 0.75rem;                   /* Updated to match card radius */
+    --member-background: 0 0% 9.4%;
+    
+    /* Chart colors */
+    --chart-1: 274 87% 54%;
+    --chart-2: 232 100% 56%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    
+    /* Admin Panel Unified Colors */
+    --admin-background: 220 13% 9%;
+    --admin-card: 220 13% 12%;
+    --admin-card-hover: 220 13% 15%;
+    --admin-border: 220 13% 20%;
+    --admin-border-subtle: 220 13% 18%;
+    --admin-text: 0 0% 98%;
+    --admin-text-muted: 0 0% 70%;
+    --admin-text-subtle: 0 0% 45%;
+    --admin-accent: 274 87% 54%;
+    --admin-accent-hover: 274 87% 60%;
+    --admin-success: 142 76% 36%;
+    --admin-success-hover: 142 76% 42%;
+    --admin-warning: 38 92% 50%;
+    --admin-warning-hover: 38 92% 56%;
+    --admin-destructive: 0 84% 60%;
+    --admin-destructive-hover: 0 84% 66%;
+    
+    /* Admin Glass Effects */
+    --admin-glass-bg: 220 13% 12% / 0.8;
+    --admin-glass-border: 220 13% 25% / 0.3;
+    --admin-glass-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.12);
+
+    /* Modal Colors - Dark Mode */
+    --modal-bg: 220 13% 12%;                  /* Solid modal background */
+    --overlay: 0 0% 0% / 0.85;                /* Dark overlay with good opacity */
+  }
+
+  .dark {
+    /* Dark mode maintains same CYRUS brand colors */
+    --background: 220 13% 9%;
+    --background-secondary: 0 0% 3.9%;
+    --background-tertiary: 0 0% 6.3%;
+    --foreground: 0 0% 98%;
+    --foreground-muted: 0 0% 70%;
+    --foreground-subtle: 0 0% 45%;
+    
+    --card: 0 0% 6%;                     /* Consistent dark card background */
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 274 87% 54%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 9.4%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 9.4%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 9.4%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;                  /* Neutral border for dark */
+    --border-muted: 0 0% 15%;
+    --input: 0 0% 9.4%;
+    --ring: 274 87% 54%;
+    
+    /* Dark mode chart colors */
+    --chart-1: 274 87% 54%;
+    --chart-2: 232 100% 56%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --member-background: 0 0% 9.4%;
+    
+    /* Admin Panel Dark Mode (same as root) */
+    --admin-background: 220 13% 9%;
+    --admin-card: 220 13% 12%;
+    --admin-card-hover: 220 13% 15%;
+    --admin-border: 220 13% 20%;
+    --admin-border-subtle: 220 13% 18%;
+    --admin-text: 0 0% 98%;
+    --admin-text-muted: 0 0% 70%;
+    --admin-text-subtle: 0 0% 45%;
+    --admin-accent: 274 87% 54%;
+    --admin-accent-hover: 274 87% 60%;
+    --admin-success: 142 76% 36%;
+    --admin-success-hover: 142 76% 42%;
+    --admin-warning: 38 92% 50%;
+    --admin-warning-hover: 38 92% 56%;
+    --admin-destructive: 0 84% 60%;
+    --admin-destructive-hover: 0 84% 66%;
+    
+    /* Admin Glass Effects */
+    --admin-glass-bg: 220 13% 12% / 0.8;
+    --admin-glass-border: 220 13% 25% / 0.3;
+    --admin-glass-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.12);
+
+    /* Modal Colors - Dark Mode */
+    --modal-bg: 220 13% 12%;                  /* Solid modal background */
+    --overlay: 0 0% 0% / 0.85;                /* Dark overlay with good opacity */
+  }
+
+  .light {
+    /* Light mode - Professional light theme with CYRUS branding */
+    --background: 0 0% 98%;              /* Light gray background */
+    --background-secondary: 0 0% 95%;    /* Slightly darker for cards */
+    --background-tertiary: 0 0% 92%;     /* Even darker for depth */
+    --background-glass: 0 0% 100% / 0.8; /* Light glass effect */
+    
+    /* Glass Effect Variables - Light Mode */
+    --glass-bg-subtle: 0 0% 100% / 0.4;
+    --glass-bg-medium: 0 0% 100% / 0.6;
+    --glass-bg-strong: 0 0% 100% / 0.8;
+    --glass-border-subtle: 0 0% 0% / 0.1;
+    --glass-border-medium: 0 0% 0% / 0.15;
+    --glass-border-brand: 274 87% 54% / 0.2;
+    --glass-border-brand-strong: 274 87% 54% / 0.3;
+    
+    /* Text Colors - Light Mode */
+    --foreground: 0 0% 12%;              /* Dark text */
+    --foreground-muted: 0 0% 35%;        /* Muted dark text */
+    --foreground-subtle: 0 0% 55%;       /* Subtle text */
+    
+    /* Interactive Elements - Light Mode */
+    --border: 0 0% 85%;                  /* Light neutral border */
+    --border-muted: 0 0% 90%;            /* Very light muted border */
+    --input: 0 0% 100%;                  /* White input background */
+    --ring: 274 87% 54%;                 /* Focus ring stays branded */
+    
+    /* Component Tokens - Light Mode */
+    --card: 0 0% 100%;                   /* White cards */
+    --card-foreground: 0 0% 12%;         /* Dark text on cards */
+    --popover: 0 0% 100%;                /* White popovers */
+    --popover-foreground: 0 0% 12%;      /* Dark text on popovers */
+    --primary: 274 87% 54%;              /* CYRUS Primary stays the same */
+    --primary-foreground: 0 0% 98%;      /* White text on primary */
+    --secondary: 0 0% 95%;               /* Light secondary */
+    --secondary-foreground: 0 0% 12%;    /* Dark text on secondary */
+    --muted: 0 0% 95%;                   /* Light muted */
+    --muted-foreground: 0 0% 45%;        /* Muted text */
+    --accent: 0 0% 95%;                  /* Light accent */
+    --accent-foreground: 0 0% 12%;       /* Dark text on accent */
+    --destructive: 0 84.2% 60.2%;        /* Destructive stays visible */
+    --destructive-foreground: 0 0% 98%;  /* White text on destructive */
+    
+    /* Light mode chart colors */
+    --chart-1: 274 87% 54%;
+    --chart-2: 232 100% 56%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --member-background: 0 0% 95%;
+    
+    /* Light mode specific gradients */
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+    --shadow-glow: 0 0 40px hsl(var(--cyrus-primary) / 0.15);
+    --shadow-card: 0 10px 30px -10px hsl(var(--cyrus-primary) / 0.1);
+    
+    /* Admin Panel Light Mode */
+    --admin-background: 0 0% 98%;
+    --admin-card: 0 0% 100%;
+    --admin-card-hover: 0 0% 97%;
+    --admin-border: 0 0% 85%;
+    --admin-border-subtle: 0 0% 90%;
+    --admin-text: 0 0% 12%;
+    --admin-text-muted: 0 0% 35%;
+    --admin-text-subtle: 0 0% 55%;
+    --admin-accent: 274 87% 54%;
+    --admin-accent-hover: 274 87% 48%;
+    --admin-success: 142 76% 36%;
+    --admin-success-hover: 142 76% 30%;
+    --admin-warning: 38 92% 50%;
+    --admin-warning-hover: 38 92% 44%;
+    --admin-destructive: 0 84% 60%;
+    --admin-destructive-hover: 0 84% 54%;
+    
+    /* Admin Glass Effects Light */
+    --admin-glass-bg: 0 0% 100% / 0.9;
+    --admin-glass-border: 0 0% 80% / 0.4;
+    --admin-glass-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.08);
+
+    /* Modal Colors - Light Mode */
+    --modal-bg: 0 0% 100%;                    /* Solid white modal background */
+    --overlay: 0 0% 0% / 0.8;                 /* Dark overlay for light mode */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background-secondary));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--cyrus-primary) / 0.3);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--cyrus-primary) / 0.5);
+  }
+}
+
+@layer utilities {
+  /* CYRUS Brand Utilities */
+  .text-cyrus-primary { color: hsl(var(--cyrus-primary)); }
+  .text-cyrus-light { color: hsl(var(--cyrus-primary-light)); }
+  .text-cyrus-dark { color: hsl(var(--cyrus-primary-dark)); }
+  .text-cyrus-accent { color: hsl(var(--cyrus-accent)); }
+  .text-cyrus-blue { color: hsl(var(--cyrus-blue)); }
+  
+  .bg-cyrus-primary { background-color: hsl(var(--cyrus-primary)); }
+  .bg-cyrus-light { background-color: hsl(var(--cyrus-primary-light)); }
+  .bg-cyrus-dark { background-color: hsl(var(--cyrus-primary-dark)); }
+  .bg-cyrus-glass { background-color: hsl(var(--background-glass)); }
+  
+  .border-cyrus { border-color: hsl(var(--border)); }
+  .border-cyrus-muted { border-color: hsl(var(--border-muted)); }
+  
+  /* Background gradients */
+  .bg-gradient-cyrus { background: var(--gradient-primary); }
+  .bg-gradient-brand { background: var(--gradient-brand); }
+  .bg-gradient-glass { background: var(--gradient-glass); }
+  
+  /* Shadows */
+  .shadow-cyrus-glow { box-shadow: var(--shadow-glow); }
+  .shadow-cyrus-card { box-shadow: var(--shadow-card); }
+  
+  /* Enhanced Glass Effect Utilities */
+  .glass-card {
+    background: hsl(var(--glass-bg-medium));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid hsl(var(--glass-border-brand));
+    border-radius: 12px;
+    box-shadow: 
+      0 8px 32px hsla(var(--cyrus-primary) / 0.15),
+      inset 0 1px 0 hsla(255, 255, 255, 0.1);
+  }
+  
+  .glass-card-subtle {
+    background: hsl(var(--glass-bg-subtle));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border-subtle));
+    border-radius: 12px;
+    box-shadow: 
+      0 4px 24px hsla(0, 0%, 0% / 0.1),
+      inset 0 1px 0 hsla(255, 255, 255, 0.05);
+  }
+  
+  .glass-card-strong {
+    background: hsl(var(--glass-bg-strong));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border-brand-strong));
+    border-radius: 12px;
+    box-shadow: 
+      0 12px 40px hsla(var(--cyrus-primary) / 0.2),
+      inset 0 1px 0 hsla(255, 255, 255, 0.15);
+  }
+
+  /* Subscription-specific glass effects */
+  .glass-subscription-card {
+    background: hsl(var(--glass-bg-medium));
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid hsl(var(--glass-border-brand));
+    border-radius: 16px;
+    box-shadow: 
+      0 10px 35px hsla(var(--cyrus-primary) / 0.18),
+      inset 0 1px 0 hsla(255, 255, 255, 0.08);
+  }
+
+  .glass-plan-card {
+    background: hsl(var(--glass-bg-subtle));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid hsl(var(--glass-border-medium));
+    border-radius: 14px;
+    box-shadow: 
+      0 6px 28px hsla(0, 0%, 0% / 0.12),
+      inset 0 1px 0 hsla(255, 255, 255, 0.06);
+  }
+  
+  /* Consistent spacing */
+  .section-padding { @apply py-20; }
+  .section-padding-sm { @apply py-12; }
+  .section-padding-lg { @apply py-24; }
+  
+  .container-padding { @apply px-4; }
+  .container-padding-lg { @apply px-6; }
+
+  /* Performance improvements */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* Admin Panel Utilities */
+  .admin-card {
+    background: hsl(var(--admin-card));
+    border: 1px solid hsl(var(--admin-border-subtle));
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: var(--admin-glass-shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .admin-card:hover {
+    background: hsl(var(--admin-card-hover));
+    border-color: hsl(var(--admin-border));
+    box-shadow: 
+      var(--admin-glass-shadow),
+      0 0 0 1px hsl(var(--admin-accent) / 0.1);
+  }
+  
+  .admin-input {
+    background: hsl(var(--admin-card));
+    border: 1px solid hsl(var(--admin-border-subtle));
+    border-radius: 12px;
+    color: hsl(var(--admin-text));
+    transition: all 0.2s ease;
+  }
+  
+  .admin-input:focus {
+    border-color: hsl(var(--admin-accent));
+    box-shadow: 0 0 0 3px hsl(var(--admin-accent) / 0.1);
+  }
+  
+  .admin-button-primary {
+    background: hsl(var(--admin-accent));
+    border: 1px solid hsl(var(--admin-accent));
+    color: white;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .admin-button-primary:hover {
+    background: hsl(var(--admin-accent-hover));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsl(var(--admin-accent) / 0.3);
+  }
+  
+  .admin-button-success {
+    background: hsl(var(--admin-success));
+    border: 1px solid hsl(var(--admin-success));
+    color: white;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .admin-button-success:hover {
+    background: hsl(var(--admin-success-hover));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsl(var(--admin-success) / 0.3);
+  }
+  
+  .admin-button-destructive {
+    background: hsl(var(--admin-destructive));
+    border: 1px solid hsl(var(--admin-destructive));
+    color: white;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .admin-button-destructive:hover {
+    background: hsl(var(--admin-destructive-hover));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsl(var(--admin-destructive) / 0.3);
+  }
+  
+  .admin-button-secondary {
+    background: hsl(var(--admin-card));
+    border: 1px solid hsl(var(--admin-border));
+    color: hsl(var(--admin-text));
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .admin-button-secondary:hover {
+    background: hsl(var(--admin-card-hover));
+    border-color: hsl(var(--admin-accent) / 0.5);
+    transform: translateY(-1px);
+  }
+
+  /* 3D Flip Card Utilities */
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  .transform-gpu {
+    transform: translateZ(0);
+  }
+  
+  .rotateY-0 {
+    transform: rotateY(0deg);
+  }
+  
+  .rotateY-180 {
+    transform: rotateY(180deg);
+  }
+
+  /* Scrollbar Customization */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-track-slate-800::-webkit-scrollbar-track {
+    background-color: rgb(30 41 59);
+  }
+  
+  .scrollbar-thumb-slate-600::-webkit-scrollbar-thumb {
+    background-color: rgb(71 85 105);
+    border-radius: 4px;
+  }
+  
+  .scrollbar-thumb-slate-600::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(100 116 139);
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+}

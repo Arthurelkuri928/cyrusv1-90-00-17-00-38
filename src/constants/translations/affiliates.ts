@@ -1,0 +1,68 @@
+
+import { Language } from '@/types/language';
+
+export const affiliatesTranslations: Record<Language, Record<string, string>> = {
+  'pt-BR': {
+    // Affiliates Page Specific
+    'affiliateProgram': 'Programa de Afiliados',
+    'affiliateDescription': 'Acompanhe seu desempenho, comissões e links exclusivos.',
+    'performanceDashboard': 'Painel de Desempenho',
+    'totalReferrals': 'Indicações Totais',
+    'monthlyEarnings': 'Ganhos no Mês',
+    'conversionRate': 'Taxa de Conversão',
+    'pendingCommission': 'Comissão Pendente',
+    'affiliateLinks': 'Seus Links de Afiliado',
+    'mainLink': 'Link Principal',
+    'plansLink': 'Link para Página de Planos',
+    'copyLink': 'Copiar Link',
+    'clicks': 'cliques',
+    'conversions': 'conversões',
+    'commissionStructure': 'Estrutura de Comissão',
+    'forEachNewClient': 'Por cada novo cliente indicado',
+    'commission': 'Comissão',
+    'linkCopied': 'Link Copiado',
+    'linkCopiedDesc': 'O link foi copiado para a área de transferência',
+  },
+  'en-US': {
+    // Affiliates Page Specific
+    'affiliateProgram': 'Affiliate Program',
+    'affiliateDescription': 'Track your performance, commissions, and exclusive links.',
+    'performanceDashboard': 'Performance Dashboard',
+    'totalReferrals': 'Total Referrals',
+    'monthlyEarnings': 'Monthly Earnings',
+    'conversionRate': 'Conversion Rate',
+    'pendingCommission': 'Pending Commission',
+    'affiliateLinks': 'Your Affiliate Links',
+    'mainLink': 'Main Link',
+    'plansLink': 'Plans Page Link',
+    'copyLink': 'Copy Link',
+    'clicks': 'clicks',
+    'conversions': 'conversions',
+    'commissionStructure': 'Commission Structure',
+    'forEachNewClient': 'For each new client referred',
+    'commission': 'Commission',
+    'linkCopied': 'Link Copied',
+    'linkCopiedDesc': 'The link has been copied to clipboard',
+  },
+  'es-ES': {
+    // Affiliates Page Specific
+    'affiliateProgram': 'Programa de Afiliados',
+    'affiliateDescription': 'Supervisa tu desempeño, comisiones y enlaces exclusivos.',
+    'performanceDashboard': 'Panel de Rendimiento',
+    'totalReferrals': 'Referencias Totales',
+    'monthlyEarnings': 'Ganancias Mensuales',
+    'conversionRate': 'Tasa de Conversión',
+    'pendingCommission': 'Comisión Pendiente',
+    'affiliateLinks': 'Tus Enlaces de Afiliado',
+    'mainLink': 'Enlace Principal',
+    'plansLink': 'Enlace a la Página de Planes',
+    'copyLink': 'Copiar Enlace',
+    'clicks': 'clics',
+    'conversions': 'conversiones',
+    'commissionStructure': 'Estructura de Comisión',
+    'forEachNewClient': 'Por cada nuevo cliente referido',
+    'commission': 'Comisión',
+    'linkCopied': 'Enlace Copiado',
+    'linkCopiedDesc': 'El enlace ha sido copiado al portapapeles',
+  }
+};

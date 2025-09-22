@@ -1,0 +1,88 @@
+
+/* Estilos globais da navbar universal */
+.universal-navbar {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  transition-duration: 300ms;
+}
+
+/* Container flutuante com nova cor e bordas arredondadas */
+.universal-navbar > div {
+  transition: box-shadow 0.3s ease;
+  background-color: #252525 !important;
+  border-radius: 0.5rem; /* rounded-lg */
+  /* Melhorar o efeito flutuante com a nova cor */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(37, 37, 37, 0.1);
+}
+
+/* Hover effect no container */
+.universal-navbar > div:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(37, 37, 37, 0.15);
+}
+
+/* Smooth transitions para links */
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+/* Mobile responsivo */
+@media (max-width: 768px) {
+  .universal-navbar {
+    position: fixed !important;
+    top: 12px;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+  
+  .universal-navbar > div {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    background-color: #252525 !important;
+    border-radius: 0.5rem;
+  }
+  
+  .universal-navbar .actions {
+    gap: 1rem;
+  }
+}
+
+/* Estados ativos e hover */
+.nav-link.active {
+  color: white;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+/* Otimizar performance de hover com a nova cor #A259FF */
+.nav-link:hover {
+  color: #A259FF;
+}
+
+/* Ajustar espaçamento para o novo design */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .universal-navbar > div {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: #252525 !important;
+    border-radius: 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .universal-navbar > div {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    background-color: #252525 !important;
+    border-radius: 0.5rem;
+  }
+}
+
+/* Garantir que o container tenha a altura correta */
+.universal-navbar {
+  min-height: 72px;
+}

@@ -1,0 +1,125 @@
+
+import { Language } from '@/types/language';
+
+export const favoritesTranslations: Record<Language, Record<string, string>> = {
+  'pt-BR': {
+    // Favorites Page Specific
+    'favoritesArea': 'Área de Favoritos',
+    'yourFavoriteTools': 'Suas Ferramentas Favoritas',
+    'favoriteToolsDescription': 'Organize e acesse rapidamente suas ferramentas favoritas. Comece explorando nosso catálogo completo.',
+    'exploreTools': 'Explorar Ferramentas',
+    
+    // Empty State Messages
+    'noFavorites': 'Nenhuma ferramenta favorita',
+    'noFavoriteTools': 'Nenhuma ferramenta favorita',
+    'addToolsToFavorites': 'Explore nosso catálogo de ferramentas e adicione suas favoritas clicando no ícone de coração.',
+    'noFavoriteToolsDescription': 'Explore nosso catálogo de ferramentas e adicione suas favoritas clicando no ícone de coração.',
+    'noToolsFound': 'Nenhuma ferramenta encontrada',
+    'tryDifferentSearch': 'Tente uma busca diferente ou limpe os filtros.',
+    'clearFilters': 'Limpar Filtros',
+    'exploreAllTools': 'Explorar Todas as Ferramentas',
+    'tryAgain': 'Tentar Novamente',
+    'loadingError': 'Não foi possível carregar as ferramentas. Verifique sua conexão ou tente novamente.',
+    'favoriteToolsTitle': 'Ferramentas Favoritas',
+    'favoriteToolsCount': 'ferramentas favoritas',
+    'favoriteToolsCountSingle': 'ferramenta favorita',
+    'showingFavorites': 'Exibindo',
+    'searchInFavorites': 'Buscar nos favoritos...',
+    'accessQuickly': 'Acesse rapidamente suas',
+    'selectedSpecially': 'selecionadas especialmente para você.',
+    'savedTools': 'ferramenta salva',
+    'savedToolsPlural': 'ferramentas salvas',
+    
+    // Tool Categories for Favorites
+    'designCreation': 'Design/Criação',
+    'marketing': 'Marketing',
+    'textWriting': 'Texto/Escrita',
+    'videoEditing': 'Edição de Vídeo',
+    'programming': 'Programação',
+    'productivity': 'Produtividade',
+    'socialMedia': 'Redes Sociais',
+    'analytics': 'Analytics',
+    'ecommerce': 'E-commerce',
+    'automation': 'Automação',
+  },
+  'en-US': {
+    // Favorites Page Specific
+    'favoritesArea': 'Favorites Area',
+    'yourFavoriteTools': 'Your Favorite Tools',
+    'favoriteToolsDescription': 'Organize and quickly access your favorite tools. Start by exploring our complete catalog.',
+    'exploreTools': 'Explore Tools',
+    
+    // Empty State Messages
+    'noFavorites': 'No favorite tools',
+    'noFavoriteTools': 'No favorite tools',
+    'addToolsToFavorites': 'Explore our tool catalog and add your favorites by clicking the heart icon.',
+    'noFavoriteToolsDescription': 'Explore our tool catalog and add your favorites by clicking the heart icon.',
+    'noToolsFound': 'No tools found',
+    'tryDifferentSearch': 'Try a different search or clear the filters.',
+    'clearFilters': 'Clear Filters',
+    'exploreAllTools': 'Explore All Tools',
+    'tryAgain': 'Try Again',
+    'loadingError': 'Unable to load tools. Check your connection or try again.',
+    'favoriteToolsTitle': 'Favorite Tools',
+    'favoriteToolsCount': 'favorite tools',
+    'favoriteToolsCountSingle': 'favorite tool',
+    'showingFavorites': 'Showing',
+    'searchInFavorites': 'Search in favorites...',
+    'accessQuickly': 'Quickly access your',
+    'selectedSpecially': 'selected especially for you.',
+    'savedTools': 'saved tool',
+    'savedToolsPlural': 'saved tools',
+    
+    // Tool Categories for Favorites
+    'designCreation': 'Design/Creation',
+    'marketing': 'Marketing',
+    'textWriting': 'Text/Writing',
+    'videoEditing': 'Video Editing',
+    'programming': 'Programming',
+    'productivity': 'Productivity',
+    'socialMedia': 'Social Media',
+    'analytics': 'Analytics',
+    'ecommerce': 'E-commerce',
+    'automation': 'Automation',
+  },
+  'es-ES': {
+    // Favorites Page Specific
+    'favoritesArea': 'Área de Favoritos',
+    'yourFavoriteTools': 'Tus Herramientas Favoritas',
+    'favoriteToolsDescription': 'Organiza y accede rápidamente a tus herramientas favoritas. Empieza explorando nuestro catálogo completo.',
+    'exploreTools': 'Explorar Herramientas',
+    
+    // Empty State Messages
+    'noFavorites': 'Ninguna herramienta favorita',
+    'noFavoriteTools': 'Ninguna herramienta favorita',
+    'addToolsToFavorites': 'Explora nuestro catálogo de herramientas y agrega tus favoritas haciendo clic en el ícono de corazón.',
+    'noFavoriteToolsDescription': 'Explora nuestro catálogo de herramientas y agrega tus favoritas haciendo clic en el ícono de corazón.',
+    'noToolsFound': 'No se encontraron herramientas',
+    'tryDifferentSearch': 'Prueba una búsqueda diferente o limpia los filtros.',
+    'clearFilters': 'Limpiar Filtros',
+    'exploreAllTools': 'Explorar Todas las Herramientas',
+    'tryAgain': 'Intentar de Nuevo',
+    'loadingError': 'No se pudieron cargar las herramientas. Verifica tu conexión o inténtalo de nuevo.',
+    'favoriteToolsTitle': 'Herramientas Favoritas',
+    'favoriteToolsCount': 'herramientas favoritas',
+    'favoriteToolsCountSingle': 'herramienta favorita',
+    'showingFavorites': 'Mostrando',
+    'searchInFavorites': 'Buscar en favoritos...',
+    'accessQuickly': 'Accede rápidamente a tus',
+    'selectedSpecially': 'seleccionadas especialmente para ti.',
+    'savedTools': 'herramienta guardada',
+    'savedToolsPlural': 'herramientas guardadas',
+    
+    // Tool Categories for Favorites
+    'designCreation': 'Diseño/Creación',
+    'marketing': 'Marketing',
+    'textWriting': 'Texto/Escritura',
+    'videoEditing': 'Edición de Video',
+    'programming': 'Programación',
+    'productivity': 'Productividad',
+    'socialMedia': 'Redes Sociales',
+    'analytics': 'Analíticas',
+    'ecommerce': 'Comercio Electrónico',
+    'automation': 'Automatización',
+  }
+};
