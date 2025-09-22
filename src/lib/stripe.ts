@@ -1,4 +1,3 @@
-/*
 import { loadStripe } from '@stripe/stripe-js';
 
 // Get the publishable key from environment variables
@@ -17,5 +16,4 @@ export const stripePromise = stripePublishableKey
 
 // Export a flag to check if Stripe is configured
 export const isStripeConfigured = !!stripePublishableKey;
-*/
 

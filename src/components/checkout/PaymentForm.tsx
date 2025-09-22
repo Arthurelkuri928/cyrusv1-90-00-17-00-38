@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// // import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js'; // Comentado
+import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -9,8 +9,8 @@ interface PaymentFormProps {
 }
 
 const PaymentForm: React.FC<PaymentFormProps> = ({ clientSecret }) => {
-  // const stripe = useStripe(); // Comentado
-  // const elements = useElements(); // Comentado
+  const stripe = useStripe();
+  const elements = useElements();
   const navigate = useNavigate();
   const [isProcessing, setIsProcessing] = useState(false);
   const [message, setMessage] = useState<string>('');
@@ -18,7 +18,43 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ clientSecret }) => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    console.log("Stripe desativado");
+
+    if (!stripe || !elements) {
+      console.error('Stripe não foi carregado');
+      return;
+    }
+
+    setIsProcessing(true);
+    setMessage('');
+
+    try {
+      console.log('🚀 Iniciando confirmação do pagamento...');
+      
+      const result = await stripe.confirmPayment({
+        elements,
+        clientSecret,
+        confirmParams: {
+          return_url: `${window.location.origin}/pagamento-sucesso`,
+        },
+      });
+
+      if (result.error) {
+        console.error('❌ Erro no pagamento:', result.error);
+        setMessage(result.error.message || 'Erro no processamento do pagamento');
+        setMessageType('error');
+      } else {
+        console.log('✅ Pagamento confirmado com sucesso');
+        setMessage('Pagamento processado com sucesso!');
+        setMessageType('success');
+        // O redirecionamento será feito automaticamente pelo Stripe
+      }
+    } catch (error) {
+      console.error('❌ Erro durante confirmação do pagamento:', error);
+      setMessage('Erro inesperado durante o pagamento');
+      setMessageType('error');
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   const cardElementOptions = {
@@ -48,7 +84,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ clientSecret }) => {
             Informações do Cartão
           </label>
           <div className="p-4 border border-input rounded-md bg-background">
-            {/* <CardElement options={cardElementOptions} /> */}
+            <CardElement options={cardElementOptions} />
           </div>
         </div>
 
@@ -68,7 +104,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ clientSecret }) => {
         {/* Submit Button */}
         <Button
           type="submit"
-          disabled={true} // Desabilitado para fins de teste
+          disabled={isProcessing || !stripe}
           className="w-full"
         >
           {isProcessing ? 'Processando...' : 'Pagar Assinatura'}
